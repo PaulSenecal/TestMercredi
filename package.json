@@ -1,0 +1,13 @@
+{
+  "name": "TestMercredi",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Paul x Marc",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
