@@ -4,12 +4,12 @@ name: Release
 on:
   push:
     branches:
-     - 'main'
+      - "main"
 
 jobs:
   build:
     name: Build
-    runs-on: 'ubuntu-latest'
+    runs-on: "ubuntu-latest"
 
     steps:
       - name: Checkout repository
@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'yarn'
+          cache: "yarn"
 
       - name: Install dependencies
         run: yarn
@@ -32,3 +32,23 @@ jobs:
         with:
           path: dist
           name: build
+
+  prettier:
+    name: run Prettier For All File
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: check
+        run: yarn prettier --check .
